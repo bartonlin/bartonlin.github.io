@@ -333,6 +333,24 @@ tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
 table a, #comments a{background-color:inherit;}
 
+/* Team
+--------------------------------------------------------------------------------------------------------------- */
+#team{}
+
+#team li:last-child{margin-bottom:0;}/* Used when elements stack in small viewports */
+#team article{display:block; text-align:center; padding:35px 25px;}
+#team article *{margin:0; padding:0;}
+#team article figure{}
+#team article figure a{margin-bottom:35px;}
+#team article figure .imgover::before, #team article figure img{border-radius:50%;}
+#team article figure figcaption{line-height:1;}
+#team article em{display:block; margin-bottom:25px; font-style:normal; font-size:.8rem;}
+#team article p{}
+#team article footer{margin-top:35px;}
+#team article footer .faico{display:block; text-align:center;}
+#team article footer .faico li{display:inline-block; margin:0 12px 0 0;}
+#team article footer .faico a{display:block; width:auto; height:auto; line-height:1; font-size:1.2rem;}
+
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------------ */
