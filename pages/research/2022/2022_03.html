@@ -38,7 +38,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <ul>
                 <li><a href="../../../index.html">Home</a></li>
                 <li><a href="../../research.html">Research</a></li>
-                <li><a>2022</a></li>
+                <li><a>Current Research Projects</a></li>
                 <li><a href="2022_03.html">結合深度強化學習、 軌跡規劃與追蹤控制於多機器人避障與導航</a></li>
             </ul>
         </div>
@@ -67,8 +67,34 @@ Licence URI: https://www.os-templates.com/template-terms
 
             <div class="content three_quarter">
                 <h1>結合深度強化學習、軌跡規劃與追蹤控制於多機器人避障與導航</h1>
-                <p>本研究利用深度強化學習理論設計出一套新的群組機器人導航避障神經網路系統。此網路系統將狀態對稱性、雜訊、速度障礙物、優先順序和非完整約束條件那入考量，使系統更加完善。此網路系統還能在縮減輸入狀態維度的前提下，對應機器人數量增加進行系統化擴展，達到以最小計算成本並提升泛用性的目的。此外，本研究還另外設計了一套軌跡規劃及追蹤系統，能夠使機器人更精確地導航至目標位姿。在機器人硬體上，安裝了光學雷達、光流感測器、慣性感測器(IMU)等感測器，並使用擴展式卡曼濾波器(Extended
-                    Kalman filter)進行感測融合，使機器人能夠進行精確定位。最終在現實環境測試以證實本系統的可行性。</p>
+                <p>本研究旨在透過強化學習及階層化控制使雙足機器人穩定行走。階層化控制將機器人分為質心軌跡規劃與姿態控制。質心規劃根據零力矩點(zero moment point,
+                    ZMP)參考軌跡，由預觀控制(Preview Control)生成機器人質心軌跡；姿態控制混合運動學及動力學控制：運動學控制將機器人動態定錨為雙質量倒單擺系統(dual-mass inverted
+                    pendulum, DMIP)，動力學控制利用踝關節之串聯彈性致動器(serial elastic actuator,
+                    SEA)進行力矩控制，使機器人質心跟隨規劃軌跡。強化學習作為預觀控制的上層架構，負責產生零力矩點參考軌跡。利用MATLAB Simscape
+                    Multibody建立物理模型進行訓練，將行走穩定度放入獎勵函數的設計，使強化學習對零力矩點參考軌跡進行最佳化，提升機器人行走的性能。本研究將此架構實現於實驗室開發之雙足機器人，利用模擬及實驗驗證此架構之性能表現。
+                </p>
+                <p>This thesis proposes a hierarchical control structure combined with reinforcement learning for
+                    bipedal robots. Hierarchical control structure consists of walking trajectory planner and low-level
+                    motion controller. Walking trajectory planner generates CoM trajectory based on predefined zero
+                    moment point (ZMP) trajectory. Low-level controller consists of kinematic controller and dynamic
+                    controller. Kinematic controller anchors robot dynamics as a dual-mass inverted pendulum (DMIP)
+                    system. Dynamic controller tracks CoM trajectory by controlling ankle torque driven by serial
+                    elastic actuator. Reinforcement learning generates ZMP trajectory. Training is implemented in MATLAB
+                    Simscape Multibody. By incorporating stability into reward function, RL optimizes parameters of ZMP
+                    trajectory to improve walking performance. The control structure is implemented on a bipedal robot
+                    built in-house. Simulations and experiments verify the robot’s performance and effectiveness of RL.
+                </p>
+
+
+                <div class="sectiontitle">
+                    <img class="imgr borderedbox inspace-5" src="../../../images/research/2022_03_01.png" alt="">
+                    <p>階層化控制架構</p>
+                    <img class="imgl borderedbox inspace-5" src="../../../images/research/2022_03_02.png" alt="">
+                    <a href="https://youtube.com/shorts/MxrQrT2lORI?feature=share" title="斜坡行走實驗">斜坡行走實驗</a>
+                </div>
+
+
+
                 <!-- / main body -->
                 <div class="clear"></div>
             </div>
