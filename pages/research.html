@@ -9,6 +9,22 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="zh-TW">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        document.getElementById('automated_industry_0').style.display = 'block';
+        document.getElementById('display_id').innerHTML = 'automated_industry_0';
+    });
+
+    function display_article(article_id) {
+        hide_article_id = document.getElementById('display_id').value;
+        document.getElementById('display_id').innerHTML = article_id;
+        document.getElementById(article_id).style.display = 'block';
+        document.getElementById(hide_article_id).style.display = 'none';
+    }
+</script>
+
+
 <head>
     <title>LDSC | Research</title>
     <meta charset="utf-8">
@@ -49,93 +65,178 @@ Licence URI: https://www.os-templates.com/template-terms
                 <h6>Research</h6>
                 <nav class="sdb_holder">
                     <ul>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="research/industry.html">Industry-Academy Cooperation</a></li>
-                        <li><a href="research/honor.html">Important Contributions, Achievements and Honors</a></li>
-                        <li><a href="research/publications.html">Selected Publications</a></li>
-                        <li><a href="research/before.html">Theses and Dissertations</a></li>
-                        <li><a href="#">Current Research Projects</a>
+                        <li><a href="javascript:void(0)">工業自動化</a>
                             <ul>
-                                <li><a href="research/2022/2022_01.html">應用強化學習於混成控制雙足機器人之步態規劃</a></li>
-                                <li><a href="research/2022/2022_02.html">四輪驅動自駕賽車之同步定位與地圖建置、導航控制及扭力引導系統研究</a></li>
-                                <li><a href="research/2022/2022_03.html">結合深度強化學習、 軌跡規劃與追蹤控制於多機器人避障與導航</a></li>
+                                <li onclick="display_article('automated_industry_0')"><a
+                                        href="javascript:void(0)">磁浮</a></li>
+                                <li onclick="display_article('automated_industry_1')"><a
+                                        href="javascript:void(0)">技頂</a></li>
+                                <li onclick="display_article('automated_industry_2')"><a
+                                        href="javascript:void(0)">上引油壓</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">工業自動化</a></li>
-                        <li><a href="#">機器人</a></li>
-                        <li><a href="#">自駕車</a></li>
+
+                        <li><a href="javascript:void(0)">機器人</a>
+                            <ul>
+                                <li onclick="display_article('robot_0')"><a href="javascript:void(0)">雙足機器人</a></li>
+                                <li onclick="display_article('robot_1')"><a href="javascript:void(0)">小車</a></li>
+                                <li onclick="display_article('robot_2')"><a href="javascript:void(0)">管路機器人</a></li>
+                                <li onclick="display_article('robot_3')"><a href="javascript:void(0)">自我平衡</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="javascript:void(0)">自駕車</a>
+                            <ul>
+                                <li onclick="display_article('self-driving_car_0')"><a href="javascript:void(0)">腳踏車</a>
+                                </li>
+                                <li onclick="display_article('self-driving_car_1')"><a href="javascript:void(0)">賽車</a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </nav>
             </div>
 
 
-            <div class="content three_quarter">
-                <!-- ################################################################################################ -->
-                <h1>1. 螺旋式移動管線檢測機器人之設計、分析與控制</h1>
-                <p>本研究研發一創新的螺旋式移動管線檢測機器人。螺旋式移動管線檢測機器人在結構上類似於差
-                    動式輪型機器人加上一個可旋轉的支撐臂搭配主動式方向輪。差動式雙輪的架構使其可維持行進操縱
-                    性與靈活度。在管路中進行檢測時，則是採用以支撐臂張開撐住管壁的螺旋前進模式。我們做了運動
-                    學分析證明為達成穩定的螺旋運動，差動雙輪相對於管線的導程角與方向輪的轉向角須維持特定的關
-                    係；我們也進行力學分析得到機器人穩定不墜落時支撐臂力矩的要求。實驗驗證了管線機器人螺旋運
-                    動能在水平管道，傾斜管道和垂直管道順利移動。</p>
-                <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
-                <iframe width="726" height="450" src="https://www.youtube.com/embed/F45GdjuSiaA" title="Pipeline robot"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <!-- ################################################################################################ -->
+            <div class="content three_quarter" id="main_body">
+                <!-- 紀錄目前顯示ID -->
+                <textarea type="hidden" id="display_id" name="display_id" style="display:none"></textarea>
 
-                <h1>2. 基於慣性感測器訊號融合之電動輔助腳踏車研究</h1>
-                <p>研發的電動輔助腳踏車以日漸普遍的微機電六軸慣性感測器取代昂貴的扭力感測器作為電動輔
-                    助的依據。與扭力感測器相較，慣性感測器可直接固定於車體上，無需更改車體機構。在配置慣性感
-                    測器融合演算法與馬達控制器下，電動輔助腳踏車可達成坡度補償，慣性補償與阻力補償。</p>
-                <img class="imgr borderedbox inspace-5" src="../images/research/research_02.png" alt="">
-                <!-- ################################################################################################ -->
+                <!-- 工業自動化 -->
 
-                <h1>3. 具重心自適應控制之機器人騎腳踏車系統</h1>
-                <img class="imgr borderedbox inspace-5" src="../images/research/research_03.png" alt="">
-                <p>在本研究中，我們建立了一人型機器人與等同大小的腳踏車。此人型機器人被設計來踩踏、平衡
-                    與駕駛此腳踏車。我們特別專注於設計控制系統使機器人能藉由操控把手來平衡與駕駛腳踏車。我們
-                    所提出的控制系統具有估測重心的能力，因之可在未知重心位置下達到平衡的性能。此控制系統是基
-                    於一廣用的控制架構，此控制架構能在未知量測偏差的狀況下達到漸近穩定的控制效能。我們也發展
-                    了一系統化的程序來設計相關的控制參數。我們以模擬與實驗驗證控制系統能達到重心自適應的性
-                    能，特別是在重心不平衡下，使機器人控制腳踏車沿直線行駛。</p>
-                <iframe width="726" height="408" src="https://www.youtube.com/embed/0qzOzA1UBEc"
-                    title="Experiments of the Robot Bicycle" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <!-- ################################################################################################ -->
+                <!-- 紀錄工業自動化數量 -->
+                <textarea type="hidden" id="automated_industry_amount" name="display_id"
+                    style="display:none">3</textarea>
 
-                <h1>4. 倒單擺機器人之強健防滑控制</h1>
-                <p>本研究致力發展用於倒單擺機器人的防滑平衡控制器以使能應用於不同的地面狀況。該控制器的
-                    設計是基於一個可以描述倒單擺動態與車輪打滑現象的泛用模型。因此模型可以分解為四個線性系統
-                    的凸組合，我們以理論證明可用四個線性全狀態回授控制的凸組合來使系統對車輪打滑具備強健穩定性。</p>
-                <img class="imgr borderedbox inspace-5" src="../images/research/research_04.png" alt="">
-                <iframe width="726" height="408" src="https://www.youtube.com/embed/F4S9Gaq8jlo"
-                    title="Anti-slip Balancing Control of a Wheeled-inverted-pendulum Vehicle" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <iframe width="726" height="408" src="https://www.youtube.com/embed/BR61Ut_y-Lw"
-                    title="Humanoid Wheeled Inverted Pendulum Robot Robust Anti-Slip Control" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <!-- ################################################################################################ -->
+                <div id="automated_industry_0" style="display:none">
+                    <h1>磁浮</h1>
+                    <p>磁浮內容。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
 
-                <h1>5. 自行車之強健平衡控制與自動駕駛研究</h1>
-                <img class="imgl borderedbox inspace-5" src="../images/research/research_05.png" alt="">
-                <p>本研究建立了自行車的強健平衡控制與自動駕駛技術，使其能在室外環境實現自我平衡、即時定
-                    位與路徑追蹤。在學理創新上，論文首創自行車平衡控制法則與路徑追蹤控制方法，並嚴謹地證明其
-                    收斂性與對操作條件變異的強健性。在實務貢獻方面，除改裝先有的自行車使其具備電動驅動、電動
-                    轉向與相關控制運算能力外；也整合 GPS、陀螺儀、加速規等感測裝置進行訊號融合運算，使能精準
-                    地估測出車體的姿態與定位資訊提供控制使用。整合後的自行車系統已於清大校園進行實證，所累積數十公里的里程驗證了其功能性與強健性。</p>
+                <div id="automated_industry_1" style="display:none">
+                    <h1>技頂</h1>
+                    <p>技頂內容。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
 
-                <iframe width="726" height="408" src="https://www.youtube.com/embed/zknZNQpsfgI" title="自駕自行車(完整版)"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <!-- ################################################################################################ -->
+                <div id="automated_industry_2" style="display:none">
+                    <h1>上引油壓</h1>
+                    <p>上引油壓內容。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
 
-                <!-- / main body -->
+
+                <!-- 機器人 -->
+
+                <!-- 紀錄機器人數量 -->
+                <textarea type="hidden" id="robot_amount" name="display_id" style="display:none">4</textarea>
+
+                <div id="robot_0" style="display:none">
+                    <h1>雙足機器人</h1>
+                    <p>雙足機器人內容。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div id="robot_1" style="display:none">
+                    <h1>阿巴阿巴小車</h1>
+                    <p>本研究利用深度強化學習理論設計出一套新的群組機器人導航避障神經網路系統。此網路系統將狀態對稱性、雜訊、速度障礙物、優先順序和非完整約束條件那入考量，使系統更加完善。此網路系統還能在縮減輸入狀態維度的前提下，對應機器人數量增加進行系統化擴展，達到以最小計算成本並提升泛用性的目的。此外，本研究還另外設計了一套軌跡規劃及追蹤系統，能夠使機器人更精確地導航至目標位姿。在機器人硬體上，安裝了光學雷達、光流感測器、慣性感測器(IMU)等感測器，並使用擴展式卡曼濾波器(Extended
+                        Kalman filter)進行感測融合，使機器人能夠進行精確定位。最終在現實環境測試以證實本系統的可行性。</p>
+                    <p>
+                        This thesis develops a navigation and obstacle avoidance neural network for the multi-robot
+                        system
+                        based on deep reinforcement learning. The network design starts with the dual-robot system.
+                        Considering state symmetry, nonholonomic constraints, priority order and speed obstacles, the
+                        reinforcement learning can efficiently train the network so that it conforms to the kinematics
+                        of
+                        mobile robots and can perform collision avoidance and social navigation. An innovative extension
+                        architecture is also proposed in the thesis. Combined with the concept of social repulsive
+                        force,
+                        the dual-robot obstacle avoidance and navigation network can be systematically extended to
+                        multi-robot systems with light computational cost. In addition, in order to make up for the
+                        insufficient positioning accuracy of the network at the target point, the thesis also proposes a
+                        trajectory planning and tracking method for the control switching of the robot navigation to the
+                        vicinity of the target point. To verify the developed theories and methods, a set of
+                        differential
+                        drive wheeled robots are constructed. Each of the robots is equipped with an optical radar, an
+                        optical flow sensor, an inertial measurement unit, etc., and the extended Kalman filter is used
+                        for
+                        sensor fusion to achieve precise localization. Experiments in the indoor environment prove the
+                        feasibility and performance of the proposed multi-robot navigation and obstacle avoidance
+                        network.
+                    </p>
+
+                    <img class="imgr borderedbox inspace-5" src="../images/research/2022_01_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/9Xvqocp-uek" title="三台機器人路徑交錯實驗"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                </div>
+
+                <div id="robot_2" style="display:none">
+                    <h1>管路機器人</h1>
+                    <p>管路機器人內容。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div id="robot_3" style="display:none">
+                    <h1>自我平衡</h1>
+                    <p>自我平衡內容。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+
+                <!-- 自駕車 -->
+
+                <!-- 自駕車數量 -->
+                <textarea type="hidden" id="self-driving_car_amount" name="display_id" style="display:none">2</textarea>
+
+                <div id="self-driving_car_0" style="display:none">
+                    <h1>自駕車</h1>
+                    <p>測試。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div id="self-driving_car_1" style="display:none">
+                    <h1>自駕車</h1>
+                    <p>測試。</p>
+                    <img class="imgr borderedbox inspace-5" src="../images/research/research_01.png" alt="">
+                    <iframe width="726" height="408" src="https://www.youtube.com/embed/F45GdjuSiaA"
+                        title="Pipeline robot" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
                 <div class="clear"></div>
             </div>
         </main>
